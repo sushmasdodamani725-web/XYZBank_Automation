@@ -28,17 +28,13 @@ jobs:
       - name: Download Allure CLI
         run: |
             ALLURE_VERSION=2.30.0
-            wget https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/${ALLURE_VERSION}/allure-c… -O allure.tgz
+            wget https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/${ALLURE_VERSION}/allure-commandline-${ALLURE_VERSION}.tgz -O allure.tgz
             tar -zxvf allure.tgz
             sudo mv allure-${ALLURE_VERSION} /opt/allure
             sudo ln -s /opt/allure/bin/allure /usr/bin/allure
             allure --version
 
-#      - name: Install Allure CLI
-#        run: |
-#          sudo apt-add-repository ppa:qameta/allure -y
-#          sudo apt-get update
-#          sudo apt-get install allure -y
+          
 
       - name: Run Pytest with Allure
         run: |
