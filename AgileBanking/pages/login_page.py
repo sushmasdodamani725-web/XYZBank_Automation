@@ -10,7 +10,7 @@ class LoginPage:
     # Locators
     BANK_MANAGER_BTN = (By.CSS_SELECTOR, "button[ng-click='manager()']")
     CUSTOMER_BTN = (By.CSS_SELECTOR, "button[ng-click='customer()']")
-    LOGIN_BTN = (By.CSS_SELECTOR, "button[type='submit']")
+    LOGIN_BTN = (By.CSS_SELECTOR, "button[ng-click='byebye()']")
     USER_SELECT = (By.ID, "userSelect")
     ACCOUNT_SELECT = (By.ID, "accountSelect")
 
