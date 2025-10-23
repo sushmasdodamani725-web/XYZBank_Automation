@@ -25,13 +25,19 @@ jobs:
           pip install -r requirements.txt
           pip install allure-pytest
 
+      - name: Install Allure CLI
+        run: |
+          sudo apt-add-repository ppa:qameta/allure -y
+          sudo apt-get update
+          sudo apt-get install allure -y
+
       - name: Run Pytest with Allure
         run: |
           mkdir -p allure-results
           pytest --alluredir=allure-results
 
-      - name: Generate Allure report
+      - name: Generate Allure Report
         run: |
-          pip install allure-commandline
           allure generate allure-results --clean -o allure-report
-          allure open allure-report
+          # To view the report locally, you can use 'allure serve' instead
+          # allure serve allure-results
